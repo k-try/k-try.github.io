@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点赞测试</title>
+	<style>
+		.c1{
+			cursor:pointer;
+		}
+		.c1:hover{
+			background-color:rgba(0,0,0,.6);
+		}
+	</style>
+</head>
+<body>
+	<div style="padding:50px;">
+		<a style="position:relative;" onclick="addlike(this);"class= "c1">赞</a>
+	</div>
+	<div style="padding:50px;">
+		<a style="position:relative;" onclick="addlike(this);"class= "c1">赞</a>
+	</div>
+	<div style="padding:50px;">
+		<a style="position:relative;" onclick="addlike(this);"class= "c1">赞</a>
+	</div>
+	
+	<script>
+		function addlike(ths){
+			confirm("内容这么烂！！你确定要赞这个垃圾吗？？？");
+			var t=-12;
+			var l=15;
+			var op=1;
+			var fs=20;
+			var tag = document.createElement("a");
+			tag.style.position="absolute";
+			tag.style.top=t+"px";
+			tag.style.left=l+"px";
+			tag.innerText="+1";
+			tag.style.fontSize=fs+"px";
+			tag.style.opacity=op;
+			tag.style.color="pink"
+			ths.insertAdjacentElement("beforeEnd",tag);
+			var interval=setInterval(function(){
+			t -= 10;
+			l += 10;
+			fs +=5;
+			op -= 0.1;
+			tag.style.top=t+"px";
+			tag.style.left=l+"px";
+			tag.style.opacity=op;
+			tag.style.fontSize=fs+"px";
+			if(op>=0.8){
+				tag.style.color="yellow";
+			}
+			if(op<0.8&&op>=0.5){
+				tag.style.color="green";
+			}
+			if(op<0.5&&op>=0.2){
+				tag.style.color="red";
+			}
+			if(op<=0){
+				clearInterval(interval);
+				ths.removeChild(tag);
+			}
+			
+
+		},50)
+	
+		}
+			
+			
+	</script>
+</body>
+
+
+</html>
