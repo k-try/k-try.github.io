@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery左侧菜单</title>
+<link rel="stylesheet"type="text/css"href="https://github.com/k-try/web/blob/master/test.CSS">
+<style>
+
+	*{
+		margin:0;
+		padding:0;
+		z-index:100;
+	}
+	.manual{
+		width:10%;
+		height:600px;
+		border:1px solid #999;
+		overflow:auto;
+		cursor:pointer;
+		float:left;
+		position:fixed;
+		top:100px;
+		bottom:95%;
+		
+	}
+	.title{
+		height:40px;
+		background-color:#03C;
+		color:white;
+		text-align:center;
+		line-height:40px;
+		border-bottom:3px solid #0532bb;
+		border-right:5px solid #0532bb;
+		}
+	.title:hover{
+		background:blue;
+		height:50px;
+		font-size:30px;
+	}
+	.body div:hover{
+		background:#dddddd;
+		border:1px solid pink;
+		font-size:25px;
+		box-shadow:5px 5px 20px #888888;
+		border-radius:5px 20px 5px 20px;
+	}
+	
+	.hide{
+		display:none;
+	}
+	
+	h1{
+		text-align:center;
+	}
+	.char:hover{
+		background-color:white;
+		border:2px solid blue;
+		
+	}
+	
+</style>
+</head>
+
+<body>
+<div style="height:100px;width:100%;position:fixed;top:0;">
+	<div style="height:30px;background-color:pink;text-align:center;line-height:30px;">这是一个副顶栏</div>
+	<div style="height:69px;background-color:yellow;text-align:center;line-height:69px;">这是一个主顶栏</div>
+</div>
+<div>
+	<div class='manual'>
+	<div class='item'>
+    	<div class='title'onclick="click_title(this);">标题一</div>
+    	<div class='body'>
+        	<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+			<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+			<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+			<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+			<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+			<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+        </div>
+    </div>
+	<div class='item'>
+    	<div class='title'onclick="click_title(this);">标题一</div>
+    	<div class='body hide'>
+        	<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+        </div>
+    </div>
+	<div class='item'>
+    	<div class='title'onclick="click_title(this);">标题一</div>
+    	<div class='body hide'>
+        	<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+        </div>
+    </div>
+	<div class='item'>
+    	<div class='title'onclick="click_title(this);">标题一</div>
+    	<div class='body hide'>
+        	<div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+            <div>内容一</div>
+        </div>
+	</div>
+	</div>
+	<div style="height:2000px;width:89%;background-color:#dddddd;float:left;position:absolute;top:102px;left:10.5%;z-index:99;">
+		<h1>关于学习习近平总书记中国梦的讨论</h1>
+		<div class="allcheck"style="border:1px solid black;">一、全选 取消 反选<p/>
+			<input type="button" value="全选" onclick="checkAll();"/>
+			<input type="button" value="取消" onclick="cancal();"/>
+			<input type="button" value="反选" onclick="bd();"/>
+			<table border="1">
+				<thead>
+					<tr>
+						<td>操作</td>
+					
+						<td>姓名</td>
+					
+						<td>学号</td>
+					
+						<td>成绩</td>
+					</tr>
+				</thead>
+					
+				<tbody class="tb">
+					<tr>
+						<th>
+							<input type='checkbox'></input>
+						</th>
+					
+						<th>11</th>
+					
+						<th>12</th>
+					
+						<th>13</th>
+					</tr>
+					<tr>
+						<th>
+							<input type='checkbox'></input>
+						</th>
+					
+						<th>21</th>
+					
+						<th>22</th>
+					
+						<th>23</th>
+					</tr>
+					<tr>
+						<th>
+							<input type='checkbox'></input>
+						</th>
+					
+						<th>31</th>
+					
+						<th>32</th>
+					
+						<th>33</th>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+		<div style="margin-top:100px;border:1px solid black;">二、radio<p/>
+			男  <input type="radio" name="genter"id="rd1"onclick="crd(this)"/>
+			女  <input type="radio" name="genter"/>
+			中性  <input type="radio" "name="genter"/>
+		</div>
+		<div style="margin-top:50px;border:1px solid black;">三、增减文本框
+			<p>
+				<span onclick="addInput(this)"style="display:inline-block;width:30px;text-align:center;border:1px solid white"class="char">+</span>
+				<input type="text"/>
+			</p>
+		</div>
+		<form style="margin-top:50px;border:1px solid black;">四、表单验证
+			<div style="height:50px;">
+				<a style="width:80px;text-align:center;display:inline-block;">用户名：</a>
+				<input type="text" lebel="用户名"/>
+				<!--<span style="background-color:red;color:white;">输入不能为空</span>-->
+			</div>
+			<div style="height:50px;">
+				<a style="width:80px;text-align:center;display:inline-block;">密码：</a>
+				<input type="password" lebel="密码"/>
+				<!--<span style="background-color:red;color:white;">输入不能为空</span>-->
+			</div>
+			<div style="height:50px;">
+				<a style="width:80px;text-align:center;display:inline-block;">电话：</a>
+				<input type="text" lebel="电话"/>
+				<!--<span style="background-color:red;color:white;">输入不能为空</span>-->
+			</div>
+			<div>
+				<input type="submit"value="提交" />
+			</div>
+		</form>
+		<div>
+			<div id="radius">css之圆角
+			</div>
+			<div id="radius2">制造圆形
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<script src="jquery-1.9.0.min.js"></script>
+	<script src="formVerify.js"></script>
+	<script>
+		function click_title(ths){
+			console.log(ths);
+			//$(ths);//dom对象转换成jquery对象
+			$(ths).next().removeClass("hide");
+			$(ths).parent().siblings().find(".body").addClass("hide");
+		}
+		function checkAll(){
+			$('.tb input[type="checkbox"]').prop("checked",true);//双引号中的双引号无效，单引号中的双引号才有用
+		}
+		function cancal(){
+			$('.tb input[type="checkbox"]').prop("checked",false);//双引号中的双引号无效，单引号中的双引号才有用
+		}
+		function bd(){
+			$('.tb input[type="checkbox"]').each(function(i){
+				console.log(i,$(this).prop("checked"));
+				if($(this).prop("checked")==true){
+					$(this).prop("checked",false);
+				}
+				else{
+					$(this).prop("checked",true);
+				}
+			})
+		}
+		function crd(ths){
+			console.log($(ths).translate)
+			
+		}
+		function addInput(ths){
+			var p=$(ths).parent().clone();
+			p.find(":text").val("");
+			p.find("span").text("-");
+			p.find("span").attr("onclick","deleteText(this)");
+			$(ths).parent().parent().append(p);
+		}
+		function deleteText(ths){
+			$(ths).parent().remove();
+		}
+		/*function form_verify(){//使用dom绑定事件
+			$('form span').remove();
+			flag=true;
+			$('form input[type="text"]').each(function(i){
+					var val=$(this).val();
+					if(val.length==0){
+						var tag=document.createElement("span");
+						tag.style.backgroundColor="red";
+						tag.style.color="white";
+						$(tag).text($(this).attr("lebel")+"输入不能为空");
+						$(this).parent().append(tag);
+						flag=false;
+					}
+				})
+			return flag;
+		}*/
+		/*$(function(){
+				$('form :submit').click(function(){//使用jquery绑定事件
+				var flag=true;
+				$('form span').remove();
+				var tag=$('form :text');
+				tag.each(function(i){
+						if($(this).val().length==0){
+						var sp=document.createElement("span");
+						sp.innerText=$(this).attr("lebel")+"输入不能为空！"
+						$(sp).css("backgroundColor","red");
+						$(sp).css("color","white");
+						$(sp).css("fontSize","12px");
+						$(this).after(sp);
+						flag=false;
+						return false;
+					}
+				})
+			return flag;
+			})
+		})*/
+		
+		$('form').formV();
+		$(function(){
+			$('#radius').parent().css('backgroundColor','#009688');
+			$('#radius').mouseover(function(){
+				var x=0;
+				var interval=setInterval(function(){
+					x +=10;
+					//console.log($('#radius').css('borderRadius'));
+					$('#radius').css('borderRadius',x+'px'+' '+0+'px'+' '+x+'px'+' '+0);
+					if(x==100){
+						clearInterval(interval);
+					}
+				},15);
+			});
+			
+			$('#radius').mouseout(function(){
+				var x=100;
+				var interval=setInterval(function(){
+					x -=10;
+					//console.log($('#radius').css('borderRadius'));
+					$('#radius').css('borderRadius',x+'px'+' '+0+'px'+' '+x+'px'+' '+0);
+					if(x==100){
+						clearInterval(interval);
+					}
+				},15);
+			});
+			
+			$('#radius2').mouseover(function(){
+				var x=50;
+				var interval=setInterval(function(){
+					x -=10;
+					//console.log($('#radius').css('borderRadius'));
+					$('#radius2').css('borderRadius',x+"px");
+					if(x==0){
+						clearInterval(interval);
+					}
+				},15);
+			});
+			
+			$('#radius2').mouseout(function(){
+				var x=0;
+				var interval=setInterval(function(){
+					x +=10;
+					//console.log($('#radius').css('borderRadius'));
+					$('#radius2').css('borderRadius',x+"px");
+					if(x==50){
+						clearInterval(interval);
+					}
+				},15);
+			});
+		})
+		
+	</script>
+
+</body>
+</html>

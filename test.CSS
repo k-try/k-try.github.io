@@ -1,0 +1,27 @@
+#radius{
+	background-color:#4caf50;
+	height:100px;
+	width:200px;
+	margin:0 auto;
+	text-align:center;
+	line-height:100px;
+	/* border-radius:100px 0px 100px 0px; */
+	box-shadow:5px 5px 20px #004d40;
+}
+/* #radius:hover{
+	border-radius:100px 0px 100px 0px;
+	box-shadow:50px 30px 10px #888888;
+} */
+#radius2{
+	
+	background-color:#4caf50;
+	height:100px;
+	width:100px;
+	margin:50px auto;
+	//margin-top:50px;
+	
+	text-align:center;
+	line-height:100px;
+	border-radius:50px 50px 50px 50px;
+	box-shadow:5px 5px 20px #004d40;
+}
