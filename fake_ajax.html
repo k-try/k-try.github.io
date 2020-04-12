@@ -16,7 +16,8 @@
 			document.getElementById("fo").submit();
 			document.getElementById("if").onload=function(){
 				console.log(this.contentWindow.document);
-				html +=this.contentWindow.document.body;
+				var html =this.contentWindow.document.body;
+				$(this).append(html);
 			}
 		}
 	</script>
