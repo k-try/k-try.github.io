@@ -11,13 +11,15 @@
 		<input type="text"></input>
 		<input type="button"value="submit" onclick="a()"></input>
 	</form>
+	<div id="fafa"style="position:absolute;top:200px;">
+	</div>
 	<script>
 		function a(){
 			document.getElementById("fo").submit();
 			document.getElementById("if").onload=function(){
 				console.log(this.contentWindow.document);
 				var html =this.contentWindow.document.body;
-				document.getElementById("fo").appendChild(html);
+				document.getElementById("fafa").appendChild(html);
 			}
 		}
 	</script>
