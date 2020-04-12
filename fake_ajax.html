@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>这是一个假的ajax</title>
+</head>
+<body>
+	<input type="text"></input>
+	<iframe id="if" name="fake"style="height:100px,width:200px"></iframe>
+	<form id="fo"target="fake"action="http://k-try.cn" method="GET">
+		<input type="text"></input>
+		<input type="button"value="submit" onclick="a()"></input>
+	</form>
+	<script>
+		function a(){
+			document.getElementById("fo").submit();
+			document.getElementById("if").onload=function(){
+				console.log(this.contentWindow.document);
+			}
+		}
+	</script>
+</body>
+
+</html>
